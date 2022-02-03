@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET Projects Page. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('projects', { title: "My Portfolio - Ronald Saenz | Projects Page" });
 });
 
 module.exports = router;
