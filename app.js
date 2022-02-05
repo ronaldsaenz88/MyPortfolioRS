@@ -1,10 +1,23 @@
+/**
+ * app.js
+ *
+ * Student Name: Ronald Saenz
+ * Student Id: 301218602
+ * Due Date: Feb 05, 2022
+ *
+ * @link   app.js
+ * @file   This file defines the deployment of the project.
+ * @author Ronald Saenz <rsaenzh@my.centennialcollege.ca>
+ * @since  1.0.0
+ */
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// Routes files
+// I defined the Routes files
 var indexRouter = require('./routes/index');
 var aboutRouter = require('./routes/about');
 var projectsRouter = require('./routes/projects');
@@ -23,12 +36,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// I included the routes files into the app to use in the deployment
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/projects', projectsRouter);
 app.use('/services', servicesRouter);
 app.use('/contact', contactRouter);
 
+// I included the route to download my resume
 app.get('/download-resume', function(req, res){
   const file = `${__dirname}/public/uploads/RESUME_RSAENZ.pdf`;
   res.download(file); // Set disposition and send it.
