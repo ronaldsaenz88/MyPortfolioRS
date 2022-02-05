@@ -29,6 +29,11 @@ app.use('/projects', projectsRouter);
 app.use('/services', servicesRouter);
 app.use('/contact', contactRouter);
 
+app.get('/download-resume', function(req, res){
+  const file = `${__dirname}/public/uploads/RESUME_RSAENZ.pdf`;
+  res.download(file); // Set disposition and send it.
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
