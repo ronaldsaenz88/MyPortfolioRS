@@ -1,0 +1,103 @@
+<%/**
+ * index.ejs
+ *
+ * Student Name: Ronald Saenz
+ * Student Id: 301218602
+ * Due Date: Feb 05, 2022
+ *
+ * @link   index.ejs
+ * @file   This file defines the view to show the "Home" Page with my mission
+ * @author Ronald Saenz <rsaenzh@my.centennialcollege.ca>
+ * @since  1.0.0
+ */%>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('partials/head'); %>
+  </head>
+  <body id="page-top">
+    <!-- Begin Preloader -->
+    <%- include('partials/preloader'); %>
+    <!-- End Preloader -->
+    <div class="page db-social">
+      <!-- Begin Header -->
+      <%- include('partials/header'); %>
+      <!-- End Header -->
+
+      <!-- Begin Page Content -->
+      <div class="page-content d-flex align-items-stretch">
+        <!-- Begin Side Navbar -->
+        <div class="compact-sidebar has-shadow">
+          <%- include('partials/sidebar'); %>
+        </div>
+        <!-- End Side Navbar -->
+        
+        <!-- Begin Content -->
+        <div class="content-inner compact">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-xl-11">
+                <!-- Begin Page Header-->
+                <div class="page-header pr-0 pl-0">
+                    <div class="d-flex align-items-center">
+                        <h2 class="page-header-title">Home</h2>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+                <div class="row">
+                  <div class="col-xl-12 col-md-4 col-sm-6 col-remove">
+                    <!-- Begin Card -->
+                    <div class="widget-image has-shadow">
+                      <div class="group-card">
+                        <!-- Begin Widget Body -->
+                        <div class="widget-body">
+                          <h4 class="title">Hi<br/>I am Ronald Saenz Huerta</h4><br/>
+                          <div class="category">DevOps Engineer | Software Developer | Security Engineer</div>
+                          <br/>
+                          <h4 class="name">Mission Statement</h4>
+                          <div class="stats text-center">
+                            <span class="text">
+                              To contribute solutions that create value and consistent competitive advantage for companies around the world.
+                            </span>
+                            <br/><br/>
+                            <div class="category">"The function of good software is to make the apparent complex simple"</div>
+                            <div class="text">
+                              -Grady Booch
+                            </div>
+                            <br/><br/>
+                            <a href="/about" class="btn btn-gradient-01">About</a>
+                            <a href="/projects" class="btn btn-gradient-01">Projects</a>
+                            <a href="/services" class="btn btn-gradient-01">Services</a>
+                            <a href="/contact" class="btn btn-gradient-01">Contact</a>
+                            <br/>
+                          </div>
+                        </div>
+                        <!-- End Widget Body -->
+                      </div>
+                    </div>
+                    <!-- End Card -->
+                  </div>
+                </div>
+                <!-- End Row -->
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+          </div>
+          <!-- End Container -->
+
+          <!-- Begin Page Footer-->
+          <%- include('partials/footer'); %>
+          <!-- End Page Footer -->
+        </div>
+        <!-- End Content -->
+      </div>
+      <!-- End Page Content -->
+    </div>
+
+    <!-- Begin Vendor Js and Page Vendor Js -->
+    <%- include('partials/foot_js'); %>
+    <!-- End Vendor Js and Page Vendor Js -->
+  </body>
+</html>
