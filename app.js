@@ -4,6 +4,7 @@
  * Student Name: Ronald Saenz
  * Student Id: 301218602
  * Due Date: Feb 05, 2022
+ * Modify Date: Feb 18, 2022
  *
  * @link   app.js
  * @file   This file defines the deployment of the project.
@@ -16,6 +17,23 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const dotenv = require("dotenv")
+
+// environment
+dotenv.config()
+
+// database setup
+var mongoose = require('mongoose');
+var DB = require('./config/db');
+
+// point mongoose to the DB URI
+mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+
+let mongoDB = mongoose.connection;
+mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
+mongoDB.once('open', ()=>{
+  console.log('Connected to MongoDB...');
+});
 
 // I defined the Routes files
 var indexRouter = require('./routes/index');
@@ -23,6 +41,7 @@ var aboutRouter = require('./routes/about');
 var projectsRouter = require('./routes/projects');
 var servicesRouter = require('./routes/services');
 var contactRouter = require('./routes/contact');
+var businessContactRouter = require('./routes/business_contact');
 
 var app = express();
 
@@ -42,6 +61,7 @@ app.use('/about', aboutRouter);
 app.use('/projects', projectsRouter);
 app.use('/services', servicesRouter);
 app.use('/contact', contactRouter);
+app.use('/business_contact_list', businessContactRouter);
 
 // I included the route to download my resume
 app.get('/download-resume', function(req, res){
