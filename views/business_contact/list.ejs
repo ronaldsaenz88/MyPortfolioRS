@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body id="page-top">
+    <!-- Begin Preloader -->
+    <%- include('../partials/preloader'); %>
+    <!-- End Preloader -->
+    <div class="page db-social">
+      <!-- Begin Header -->
+      <%- include('../partials/header'); %>
+      <!-- End Header -->
+
+      <!-- Begin Page Content -->
+      <div class="page-content d-flex align-items-stretch">
+        <!-- Begin Side Navbar -->
+        <div class="compact-sidebar light-sidebar has-shadow">
+          <%- include('../partials/sidebar'); %>
+        </div>
+        <!-- End Side Navbar -->
+        
+        <!-- Begin Content -->
+        <div class="content-inner compact">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-11">
+                    <!-- Begin Page Header-->
+                    <div class="page-header pr-0 pl-0">
+                        <div class="d-flex align-items-center">
+                            <h2 class="page-header-title">Business Contact</h2>
+                        </div>
+                    </div>
+                    <!-- End Page Header -->
+                    <div class="row flex-row">
+                        <div class="col-xl-12">
+                            <!-- Form -->
+                            <div class="widget has-shadow">
+                                <div class="widget-header bordered no-actions d-flex align-items-center">
+                                    <h4>Business Contact List</h4>
+                                </div>
+                                <div class="widget-body">
+
+                                    <a href="/business_contact_list/add" class="btn btn-primary" role="button">
+                                        <i class="fas fa-plus-circle"></i> Add a Business Contact
+                                    </a>
+                                    <br><br>
+                                    <table class="table table-bordered table-striped table-hover">
+                                        <!-- Header Row-->
+                                        <tr class="d-flex">
+                                            <th class="text-center col-2">First Name</th>
+                                            <th class="text-center col-2">Last Name</th>
+                                            <th class="text-center col-2">Company</th>
+                                            <th class="col-2">Email</th>
+                                            <th class="text-center col-2">Phone Number</th>
+                                            <th class="text-center col-1"></th>
+                                            <th class="text-center col-1"></th>
+                                        </tr>
+                        
+                                        <!-- Repeatable Template Row -->
+                                        <% for(let count = 0; count < BusinessContactList.length; count++) { %>
+                                            <tr class="d-flex">
+                                                <td class="text-center col-2"><%= BusinessContactList[count].first_name %></td>
+                                                <td class="text-center col-2"><%= BusinessContactList[count].last_name %></td>
+                                                <td class="text-center col-2"><%= BusinessContactList[count].company %></td>
+                                                <td class="col-2"><%= BusinessContactList[count].email %></td>
+                                                <td class="text-center col-2"><%= BusinessContactList[count].phone_number %></td>
+                                                <td class="text-center col-1">
+                                                    <a href="/business_contact_list/edit/<%= BusinessContactList[count]._id %>" class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-pencil-alt"></i> Edit</a>
+                                                </td>
+                                                <td class="text-center col-1">
+                                                    <a href="/business_contact_list/delete/<%= BusinessContactList[count]._id %>" class="btn btn-danger btn-sm">
+                                                    <i class="fas fa-trash-alt"></i> Delete</a>
+                                                </td>
+                                            </tr>
+                                        <% } %>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <!-- End Form -->
+                        </div>
+                    </div>
+                    <!-- End Row -->
+                </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+          </div>
+          <!-- End Container -->
+
+          <!-- Begin Page Footer-->
+          <%- include('../partials/footer'); %>
+          <!-- End Page Footer -->
+        </div>
+        <!-- End Content -->
+      </div>
+      <!-- End Page Content -->
+    </div>
+
+    <!-- Begin Vendor Js and Page Vendor Js -->
+    <%- include('../partials/foot_js'); %>
+    <!-- End Vendor Js and Page Vendor Js -->
+  </body>
+</html>
