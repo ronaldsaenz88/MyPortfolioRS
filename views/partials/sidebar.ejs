@@ -4,6 +4,7 @@
  * Student Name: Ronald Saenz
  * Student Id: 301218602
  * Due Date: Feb 05, 2022
+ * Modify Date: Feb 19, 2022
  *
  * @link   sidebar.ejs
  * @file   This file defines the partial view to include the sidebar that displays the menu on the left of the page.
@@ -11,7 +12,7 @@
  * @since  1.0.0
  */%>
  
- <!-- Begin Side Navbar -->
+<!-- Begin Side Navbar -->
 <nav class="side-navbar box-scroll sidebar-scroll">
     <!-- Begin Main Navigation -->
     <ul class="list-unstyled">
@@ -40,6 +41,24 @@
                 <i class="ion-email"></i><span>Contact Me</span>
             </a>
         </li>
+        <% if ( typeof user != 'undefined') { %>
+            <li>
+                <a href="/business_contact_list">
+                    <i class="la la-briefcase"></i><span>Business Contact List</span>
+                </a>
+            </li>
+            <li>
+                <a href="/auth/logout">
+                    <i class="ion-log-out"></i><span>Logout</span>
+                </a>
+            </li>
+        <% } else { %>
+            <li>
+                <a href="/auth/login">
+                    <i class="ion-log-in"></i><span>Login</span>
+                </a>
+            </li>            
+        <% } %>
     </ul>
     <!-- End Main Navigation -->
 </nav>
