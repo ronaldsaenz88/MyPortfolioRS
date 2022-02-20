@@ -16,6 +16,7 @@ Relevant Information:
 ## Task  - Assignment 1
 
 Assignment 1 - Express Portfolio Site
+
 Due: Week 4
 
 Overview: Create your Personal Portfolio Website using ExpressJS and implementing the EJS templating
@@ -27,6 +28,7 @@ an About Me page, a Projects page, a Services page, and a Contact Me page
 
 ## Task  - Assignment 2
 Assignment 2 - Express Portfolio – Authentication 
+
 Due: Week 6
 
 Overview: Using the Portfolio Web Site you developed in Assignment 1, restructure the web site to include a
