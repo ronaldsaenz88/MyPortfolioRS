@@ -1,0 +1,111 @@
+<%/**
+ * login.ejs
+ *
+ * Student Name: Ronald Saenz
+ * Student Id: 301218602
+ * Due Date: Feb 19, 2022
+ * Modify Date: Feb 19, 2022
+ *
+ * @link   login.ejs
+ * @file   This file defines the view to show the "Login" Page with the form to authenticate.
+ * @author Ronald Saenz <rsaenzh@my.centennialcollege.ca>
+ * @since  1.0.0
+ */%>
+ 
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body id="page-top">
+    <!-- Begin Preloader -->
+    <%- include('./partials/preloader'); %>
+    <!-- End Preloader -->
+    <div class="page db-social">
+      <!-- Begin Header -->
+      <%- include('./partials/header'); %>
+      <!-- End Header -->
+
+      <!-- Begin Page Content -->
+      <div class="page-content d-flex align-items-stretch">
+        <!-- Begin Side Navbar -->
+        <div class="compact-sidebar light-sidebar has-shadow">
+          <%- include('./partials/sidebar'); %>
+        </div>
+        <!-- End Side Navbar -->
+        
+        <!-- Begin Content -->
+        <div class="content-inner compact">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-11">
+                    <!-- Begin Page Header-->
+                    <div class="page-header pr-0 pl-0">
+                        <div class="d-flex align-items-center">
+                            <h2 class="page-header-title">Login</h2>
+                        </div>
+                    </div>
+                    <!-- End Page Header -->
+                    <div class="row flex-row">
+                        <div class="col-xl-12">
+                            <!-- Form -->
+                            <div class="widget has-shadow">
+                                <div class="widget-header bordered no-actions d-flex align-items-center">
+                                    <h4>Login Form</h4>
+                                </div>
+
+                                <div class="widget-body">
+                                    <form class="auth-container form" action="/auth/login"  method="POST">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">Username</label>
+                                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Enter your username" name="username" aria-describedby="TextHelp" required>
+                                            <small id="TextHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password" name="password" aria-describedby="TextPasswordHelp" required>
+                                            <small id="TextPasswordHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+                                        </div>
+                        
+                                        <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i> Sign In</button>
+                                        <a href="/" class="btn btn-warning"><i class="fas fa-undo"></i> Cancel</a>
+                                    </form>
+
+                                    <% if (message) { %>
+                                        <!-- Message Alert -->
+                                        <!--
+                                        <div class="alert alert-danger"> 
+                                            Invalid Login
+                                        </div> -->
+                                        <!-- End Message -->
+                                    <% } %>
+                                    <% if ( message) { %>
+                                        <p class="error-text"><%= message %></p>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <!-- End Form -->
+                        </div>
+                    </div>
+                    <!-- End Row -->
+                </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+          </div>
+          <!-- End Container -->
+
+          <!-- Begin Page Footer-->
+          <%- include('./partials/footer'); %>
+          <!-- End Page Footer -->
+        </div>
+        <!-- End Content -->
+      </div>
+      <!-- End Page Content -->
+    </div>
+
+    <!-- Begin Vendor Js and Page Vendor Js -->
+    <%- include('./partials/foot_js'); %>
+    <!-- End Vendor Js and Page Vendor Js -->
+  </body>
+</html>
