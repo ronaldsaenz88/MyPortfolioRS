@@ -4,7 +4,7 @@
  * Student Name: Ronald Saenz
  * Student Id: 301218602
  * Due Date: Feb 19, 2022
- * Modify Date: Feb 18, 2022
+ * Modify Date: Feb 19, 2022
  *
  * @link   business_contact.js
  * @file   This file defines the methods to do actions (CRUD) with the BusinessContact Model
@@ -28,24 +28,22 @@ module.exports.displayBusinessContactList = (req, res, next) => {
         else
         {
             //console.log(BusinessContactList);
-            res.render('business_contact/list', {title: 'My Portfolio - Ronald Saenz | Business Contact List', BusinessContactList: businessContactList});      
+            res.render('business_contact/list', {title: 'My Portfolio - Ronald Saenz | Business Contact List', BusinessContactList: businessContactList, user: req.user });      
         }
     });
 }
 
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('business_contact/add', {title: 'My Portfolio - Ronald Saenz | Add Business Contact'})          
+    res.render('business_contact/add', {title: 'My Portfolio - Ronald Saenz | Add Business Contact', user: req.user })          
 }
 
 module.exports.processAddPage = (req, res, next) => {
     let newBusinessContact = BusinessContact({
         "first_name": req.body.first_name,
         "last_name": req.body.last_name,
-        "company": req.body.company,
         "email": req.body.email,
-        "phone_number": req.body.phone_number,
-        "linkedin_url": req.body.linkedin_url
+        "phone_number": req.body.phone_number
     });
 
     BusinessContact.create(newBusinessContact, (err, BusinessContact) =>{
@@ -75,7 +73,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('business_contact/edit', {title: 'My Portfolio - Ronald Saenz | Edit Business Contact', businessContact: businessContactToEdit})
+            res.render('business_contact/edit', {title: 'My Portfolio - Ronald Saenz | Edit Business Contact', businessContact: businessContactToEdit, user: req.user })
         }
     });
 }
@@ -87,10 +85,8 @@ module.exports.processEditPage = (req, res, next) => {
         "_id": id,
         "first_name": req.body.first_name,
         "last_name": req.body.last_name,
-        "company": req.body.company,
         "email": req.body.email,
-        "phone_number": req.body.phone_number,
-        "linkedin_url": req.body.linkedin_url
+        "phone_number": req.body.phone_number
     });
 
     BusinessContact.updateOne({_id: id}, updatedBusinessContact, (err) => {

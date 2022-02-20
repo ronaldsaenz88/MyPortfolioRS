@@ -18,10 +18,8 @@ let mongoose = require('mongoose');
 let BusinessContactModel = mongoose.Schema({
     first_name: String,
     last_name: String,
-    company: String,
     email: String,
-    phone_number: String,
-    linkedin_url: String
+    phone_number: String
 });
 
 module.exports = mongoose.model('BusinessContact', BusinessContactModel);
