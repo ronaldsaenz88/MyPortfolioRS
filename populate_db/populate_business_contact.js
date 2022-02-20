@@ -1,13 +1,13 @@
 /**
- * populate_user.js
+ * populate_business_contact.js
  *
  * Student Name: Ronald Saenz
  * Student Id: 301218602
  * Due Date: Feb 19, 2022
  * Modify Date: Feb 19, 2022
  *
- * @link   populate_user.js
- * @file   This file execute the db population on the table User
+ * @link   populate_business_contact.js
+ * @file   This file execute the db population on the table BusinessContact
  * @author Ronald Saenz <rsaenzh@my.centennialcollege.ca>
  * @since  1.0.0
  */
