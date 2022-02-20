@@ -4,6 +4,7 @@
  * Student Name: Ronald Saenz
  * Student Id: 301218602
  * Due Date: Feb 05, 2022
+ * Modify Date: Feb 19, 2022
  *
  * @link   about.js
  * @file   This file defines the routes to navigate the page, and included the "About Me" Page.
@@ -16,7 +17,7 @@ var router = express.Router();
 
 /* GET About Me Page. */
 router.get('/', function(req, res, next) {
-  res.render('about', { title: "My Portfolio - Ronald Saenz | About Me Page" });
+  res.render('about', { title: "My Portfolio - Ronald Saenz | About Me Page", user: req.user });
 });
 
 module.exports = router;

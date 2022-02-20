@@ -4,6 +4,7 @@
  * Student Name: Ronald Saenz
  * Student Id: 301218602
  * Due Date: Feb 05, 2022
+ * Modify Date: Feb 19, 2022
  *
  * @link   services.js
  * @file   This file defines the routes to navigate the page, and included the "Services" Page.
@@ -16,7 +17,7 @@ var router = express.Router();
 
 /* GET Services Page. */
 router.get('/', function(req, res, next) {
-  res.render('services', { title: "My Portfolio - Ronald Saenz | Services Page" });
+  res.render('services', { title: "My Portfolio - Ronald Saenz | Services Page", user: req.user });
 });
 
 module.exports = router;
